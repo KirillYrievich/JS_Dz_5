@@ -34,6 +34,10 @@
   свойство classList у элементов.
    */
 
+  const myEl1 = document.querySelectorAll('.dropdown-item');
+  console.log(myEl1);
+  myEl1.forEach(el => el.classList.add('super-dropdown'));
+  console.log(myEl1);
 
   /*
   2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
@@ -41,12 +45,17 @@
   не было.
    */
 
+  const test = document.querySelectorAll('.btn .btn-secondary');
+  document.querySelector('.btn').classList.toggle('btn-secondary');
+  console.log(test);
+  
 
   /*
   3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
   присутствует класс "menu".
    */
 
+  document.querySelector('.menu').classList.remove('dropdown-menu');
 
   /*
   4. Используя метод insertAdjacentHTML добавьте после div'a с классом
@@ -54,22 +63,30 @@
     <a href="#">link</a>
    */
 
-
+  document
+    .querySelector('div.dropdown')
+    .insertAdjacentHTML('afterend', '<a href="#">link</a>');
+    //не понял это задание, так что подсмотрел у Вас.
+  
   /*
   5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
    */
 
-
+  document.getElementById('dropdownMenuButton').id = 'superDropdown';
+  
   /*
   6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
 
+  const myEl2 = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+  myEl2.dataset.dd = "3";
 
   /*
   7. Удалите атрибут type у элемента с классом "dropdown-toggle".
    */
 
+  document.querySelector('.dropdown-toggle').removeAttribute('type');
 
   /*
   8. Выведите в консоль все имеющиеся атрибуты и их значения тега у которого
@@ -78,7 +95,11 @@
   Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
    */
 
-
+  const myEl3 = document.querySelector('.btn.dropdown-toggle').attributes;
+  for (const _ of myEl3) {
+      console.log(`Атрибут "${_.name}" содержит значение "${_.value}"`);
+    }
+  //Можно ли так обозначать в JS не важные переменные?
 </script>
 </body>
 </html>
