@@ -36,11 +36,18 @@
   вывести этот элемент в консоль.
    */
 
+  const findEL1 = document.getElementById('super_link');
+  console.log(findEL1);
 
   /*
   2. Внутри всех элементов на странице, которые имеют класс "card-link",
   поменяйте текст внутри элемента на "ссылка".
    */
+
+  const findEL2 = document.querySelectorAll('.card-link');
+  findEL2.forEach(el => el.textContent = 'ссылка');
+  findEL2.forEach(el => console.log(el.innerText));
+  // попробывал таки оразом показать что везде поменялся текст
 
 
   /*
@@ -48,35 +55,45 @@
   элементе с классом "card-body" и вывести полученную коллекцию в консоль.
    */
 
+  const findEL3 = document.querySelectorAll('.card-body .card-link');
+  console.log(findEL3);
 
   /*
   4. Найти первый попавшийся элемент на странице у которого есть атрибут
   data-number со значением 50 и вывести его в консоль.
    */
 
-
+  const findEL4 = document.querySelector('[data-number="50"]');
+  console.log(findEL4);
+  
   /*
   5. Выведите содержимое тега title в консоль.
    */
 
+  console.log(document.title);
 
   /*
   6. Получите элемент с классом "card-title" и выведите его родительский узел
   в консоль.
    */
 
+  const findEL5 = document.querySelector('.card-title').parentNode;
+  console.log(findEL5);
 
   /*
   7. Создайте тег `p`, запишите внутри него текст "Привет" и добавьте созданный
   тег в начало элемента, который имеет класс "card".
    */
 
-
+  const createP = document.createElement('p');
+  createP.textContent = 'Привет';
+  document.querySelector('.card').prepend(createP);
+  
   /*
   8. Удалите тег h6 на странице.
    */
 
-
+  document.querySelector('h6').remove();
 </script>
 </body>
 </html>
